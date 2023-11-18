@@ -29,13 +29,12 @@ public class StudentController {
     }
     @GetMapping("/get_student_by_name")
     public Student getStudentByName(@RequestParam String name){
-       int keyvalue=0;
        for (int key:studentMap.keySet()){
            if (studentMap.get(key).getName().equals(name)){
-               keyvalue=key;
+               studentMap.get(key);
            }
        }
-       return studentMap.get(keyvalue);
+       return null;
     }
     public Student getStudentById(@RequestParam int id){
         return studentMap.get(id);
