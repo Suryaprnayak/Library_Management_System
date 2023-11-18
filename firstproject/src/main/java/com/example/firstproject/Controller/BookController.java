@@ -26,13 +26,12 @@ public class BookController {
     }
     @GetMapping("/get_book_by_name")
     public Book getBookByName(@RequestParam String name){
-        int keyvalue=0;
         for (int key : bookMap.keySet()){
             if (bookMap.get(key).getName().equals(name)){
-                keyvalue=key;
+               return bookMap.get(key);
             }
         }
-        return bookMap.get(keyvalue);
+        return null;
     }
     @DeleteMapping("/remove_book")
     public String removeBook(Book book){
