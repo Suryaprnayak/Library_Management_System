@@ -30,14 +30,12 @@ public class AdminController {
     }
     @GetMapping("/get_Admin_By_name")
     public Admin getAdminByName(@RequestParam String name){
-        int keyvalue=0;
         for(int key : adminMap.keySet()){
             if (adminMap.get(key).getName().equals(name)) {
-//                return adminMap.get(key);
-                keyvalue = key;
+               return adminMap.get(key);
             }
         }
-        return adminMap.get(keyvalue);
+        return null;
     }
     @GetMapping("/get_admin_by_id")
     public Admin getAdminById(@RequestParam int id){
